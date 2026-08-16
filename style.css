@@ -1,0 +1,217 @@
+:root {
+  --ink: #17324d;
+  --blue: #2457d6;
+  --blue-dark: #183fa6;
+  --cream: #fffaf0;
+  --white: #ffffff;
+  --mint: #5dd6b4;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 40px 20px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: var(--ink);
+  font-family: "Noto Sans TC", sans-serif;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(93, 214, 180, .24), transparent 28%),
+    radial-gradient(circle at 85% 85%, rgba(255, 191, 91, .22), transparent 30%),
+    var(--cream);
+}
+
+.background-shape {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(2px);
+  z-index: -1;
+  animation: float 7s ease-in-out infinite;
+}
+
+.shape-one {
+  width: 220px;
+  height: 220px;
+  top: -75px;
+  right: -45px;
+  background: #dfe8ff;
+}
+
+.shape-two {
+  width: 150px;
+  height: 150px;
+  bottom: -45px;
+  left: -35px;
+  background: #d9f7ec;
+  animation-delay: -3s;
+}
+
+.welcome-card {
+  width: min(680px, 100%);
+  padding: clamp(36px, 6vw, 68px);
+  text-align: center;
+  border: 1px solid rgba(36, 87, 214, .12);
+  border-radius: 32px;
+  background: rgba(255, 255, 255, .82);
+  box-shadow: 0 24px 70px rgba(23, 50, 77, .12);
+  backdrop-filter: blur(14px);
+  animation: enter .8s cubic-bezier(.2, .8, .2, 1) both;
+}
+
+.icon {
+  width: 62px;
+  height: 62px;
+  margin: 0 auto 22px;
+  display: grid;
+  place-items: center;
+  color: white;
+  font-size: 28px;
+  border-radius: 20px;
+  background: var(--blue);
+  box-shadow: 0 10px 25px rgba(36, 87, 214, .28);
+  transform: rotate(-6deg);
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: .2em;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(42px, 8vw, 72px);
+  line-height: 1.15;
+  letter-spacing: -.04em;
+}
+
+.subtitle {
+  max-width: 470px;
+  margin: 20px auto 32px;
+  color: #627286;
+  font-size: clamp(16px, 2.5vw, 19px);
+  line-height: 1.8;
+}
+
+.class-info {
+  margin-bottom: 28px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  border-radius: 18px;
+  background: #f6f8fd;
+}
+
+.class-info > div {
+  min-width: 130px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.label {
+  color: #8a96a6;
+  font-size: 12px;
+}
+
+.divider {
+  width: 1px;
+  height: 38px;
+  background: #dce2eb;
+}
+
+.status-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 7px;
+  border-radius: 50%;
+  background: var(--mint);
+  box-shadow: 0 0 0 4px rgba(93, 214, 180, .16);
+}
+
+button {
+  min-width: 190px;
+  padding: 16px 25px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  color: white;
+  font: inherit;
+  font-weight: 700;
+  border: 0;
+  border-radius: 14px;
+  background: var(--blue);
+  box-shadow: 0 12px 24px rgba(36, 87, 214, .22);
+  cursor: pointer;
+  transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+}
+
+button:hover {
+  background: var(--blue-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 28px rgba(36, 87, 214, .28);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+button:focus-visible {
+  outline: 4px solid rgba(36, 87, 214, .25);
+  outline-offset: 4px;
+}
+
+.message {
+  min-height: 25px;
+  margin: 20px 0 -12px;
+  color: var(--blue-dark);
+  font-weight: 700;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: .35s ease;
+}
+
+.message.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+footer {
+  margin-top: 24px;
+  color: #8390a0;
+  font-size: 13px;
+}
+
+@keyframes enter {
+  from { opacity: 0; transform: translateY(24px) scale(.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes float {
+  50% { transform: translateY(15px); }
+}
+
+@media (max-width: 520px) {
+  body { padding: 24px 14px; }
+  .welcome-card { padding: 34px 22px; border-radius: 24px; }
+  .class-info { gap: 14px; padding: 17px 10px; }
+  .class-info > div { min-width: 105px; }
+  .subtitle { margin-bottom: 24px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
