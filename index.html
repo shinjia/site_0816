@@ -7,18 +7,21 @@
   <title>歡迎上課</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Zen+Maru+Gothic:wght@500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="background-shape shape-one"></div>
   <div class="background-shape shape-two"></div>
+  <div class="doodle doodle-left" aria-hidden="true">✿</div>
+  <div class="doodle doodle-right" aria-hidden="true">☀</div>
 
   <main class="welcome-card">
-    <div class="icon" aria-hidden="true">✦</div>
+    <div class="tape" aria-hidden="true"></div>
+    <div class="icon" aria-hidden="true">☕</div>
     <p class="eyebrow">READY TO LEARN?</p>
     <h1>歡迎來上課！</h1>
-    <p class="subtitle">今天也一起帶著好奇心，展開一段愉快的學習旅程。</p>
+    <p class="subtitle">帶著一點好奇、一點期待，<br class="desktop-break">一起展開今天愉快的學習旅程。</p>
 
     <div class="class-info">
       <div>
@@ -33,14 +36,14 @@
     </div>
 
     <button id="startButton" type="button">
-      <span>開始上課</span>
-      <span aria-hidden="true">→</span>
+      <span>開始今天的課程</span>
+      <span class="button-arrow" aria-hidden="true">→</span>
     </button>
 
     <p id="message" class="message" aria-live="polite"></p>
   </main>
 
-  <footer>保持好奇，享受學習的每一刻。</footer>
+  <footer><span aria-hidden="true">♡</span> 保持好奇，享受學習的每一刻。</footer>
   <script src="script.js"></script>
 </body>
 </html>

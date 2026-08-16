@@ -14,4 +14,5 @@ startButton.addEventListener('click', () => {
   message.textContent = '準備好了，祝你今天收穫滿滿！ ✨';
   message.classList.add('show');
   startButton.querySelector('span:first-child').textContent = '上課囉！';
+  startButton.classList.add('started');
 });
